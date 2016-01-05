@@ -1,0 +1,11 @@
+<%
+var title = 'Edit album';
+document.title = title;
+%>
+<h1><%= title %></h1>
+<form action="" method="POST" name="album" id="album">
+	<input type="hidden" name="id" value="1"><label><span>Title</span><input
+		type="text" name="title" id="title" value="<%= album.get('title') %>"></label><label><span>Artist</span><input
+		type="text" name="artist" id="artist" value="<%= album.get('artist') %>"></label><input
+		type="button" name="submit" id="submitbutton" value="Edit">
+</form>

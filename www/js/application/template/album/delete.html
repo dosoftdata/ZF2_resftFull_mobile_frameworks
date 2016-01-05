@@ -1,0 +1,13 @@
+<%
+var title = 'Delete album';
+document.title = title;
+%>
+<h1><%= title %></h1>
+<p>Are you sure that you want to delete 'In My Dreams' by 'The Military Wives'?</p>
+<form action="" method="post">
+	<div>
+		<input type="hidden" name="id" value="<%= album.get('id') %>"> <input
+			type="button" name="del" value="Yes" id="submit-delete-yes"> <input type="button"
+			name="del" value="No" id="submit-delete-no">
+	</div>
+</form>

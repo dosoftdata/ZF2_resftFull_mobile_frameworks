@@ -1,0 +1,11 @@
+#SetEnv ZF2_PATH /home/username/zf2lib
+AddType application/x-httpd-php .html
+RewriteEngine On
+RewriteRule ^\.htaccess$ - [F]
+RewriteCond %{REQUEST_URI} =""
+RewriteRule ^.*$ /www/index.html [NC,L]
+RewriteCond %{REQUEST_URI} !^/www/.*$
+RewriteRule ^(.*)$ /www/$1
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^.*$ - [NC,L]
+RewriteRule ^www/.*$ /www/index.html [NC,L]

@@ -1,0 +1,29 @@
+<%
+var title = 'My albums';
+document.title = title;
+%>
+<h1><%= title %></h1>
+<p>
+    <a href="album-rest/add">Add new album</a>
+</p>
+<table class="table">
+<thead>
+    <tr>
+        <th>Title</th>
+        <th>Artist</th>
+        <th>&nbsp;</th>
+    </tr>
+</thead>
+<tbody id="album-list">
+<% _.each(albums, function(album) { %>
+<tr class="album-row">
+    <td><%= album.get('title') %></td>
+    <td><%= album.get('artist') %></td>
+    <td>
+        <a href="album-rest/edit/<%= album.id %>">Edit</a>
+        <a href="album-rest/delete/<%= album.id %>">Delete</a>
+    </td>
+</tr>
+<% }); %>
+</tbody>
+</table>
